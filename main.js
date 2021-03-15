@@ -1,5 +1,34 @@
-// кажется тут должен быть код...
+const textarea = document.querySelector('.news__comment_add textarea');
+const button = document.querySelector('.news__comment_add button');
+const videoel = document.querySelector('video');
+const comments = JSON.parse(localStorage.getItem('comments')) || [];
 
-// Подсказка №1: Содержимое тега textarea хранится в его свойстве value
+const insertComment = function(text) {
+    const el = document.createElement('p');
+    el.className = 'news__brief';
+    el.textContent = text;
 
-// Подсказка №2: Не забывайте, что LocalStorage и SessionStorage могут хранить только строки в виде пар ключ/значение
+    videoel.after(el);
+}
+
+button.addEventListener('click', function() {
+    let text = textarea.value;
+
+    if(text.length === 0) {
+        return(alert("Введите текст комментария"));
+    }
+
+    button.disabled = true;
+
+    insertComment(text);
+
+    comments.push(text);
+    localStorage.setItem('comments', JSON.stringify(comments));
+
+    textarea.value = "";
+    button.disabled = false;
+})
+
+for(const text of comments) {
+    insertComment(text);
+}
