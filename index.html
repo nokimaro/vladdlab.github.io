@@ -8,16 +8,32 @@
 </head>
 <body>
     <div class="wrapper">
+
         <h1 id="news__title">
             Spin IT Breaking News
         </h1>
+
         <video width="400" height="300" controls="controls" src="./assets/cat.mp4"></video>
+
         <p class="news__brief">
             Коту Пуське сегодня вставать в 6 часов утра &#128561;! Скорее оставьте ему слова поддержки &#129392;.
         </p>
 
+        <h2>Комментарии</h2>
+        <div class="comments__sort">
+            <button onclick="comments.sortDesc(); comments.render();">Новые в начале</button>
+            <button onclick="comments.sortAsc();  comments.render();">Новые в конце</button>
+        </div>
+
+        <div class="news__comments_list">
+        </div>
+
         <div class="news__comment_add">
-            <textarea name="" id="" rows="5" placeholder="Ваш комментарий"></textarea>
+
+            <input type="text" id="comment_username" placeholder="Ваше имя"  value="Аноним"/>
+
+            <textarea name="" id="comment_text" rows="5" placeholder="Ваш комментарий"></textarea>
+
             <button>
                 Добавить
             </button>

@@ -53,10 +53,11 @@ video {
 
 .news__comment_add {
     width: 100%;
-    display: flex;
-    align-items: flex-start;
-    margin-top: 1.5em;
-    position: relative;
+    margin-top: 15px;
+    /*display: flex;*/
+    /*align-items: flex-start;*/
+    /*margin-top: 1.5em;*/
+    /*position: relative;*/
 }
 
 .news__comment_add textarea {
@@ -81,4 +82,52 @@ video {
 }
 .news__comment_add button:active {
     background-color: rgb(241, 136, 124);
+}
+
+.news__comment_add input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.news__comment_add textarea {
+    width: 100%;
+}
+
+.news__comments_list {
+    width: 100%;
+}
+
+.comment__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    /*justify-content: space-between;*/
+    width: 100%;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #c6c6c6;
+
+}
+
+.comment__username {
+    font-weight: bold;
+    margin-right: auto;
+}
+.comment__date {
+    margin-left: 10px;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+.comment__text {
+    width: 100%;
+}
+
+.comment__controls {
+    margin-left: auto;
+}
+
+.comments__sort {
+    margin-bottom: 20px;
+    margin-left: auto;
 }
